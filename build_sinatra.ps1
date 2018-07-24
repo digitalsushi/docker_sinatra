@@ -1,1 +1,1 @@
-docker build --tag digitalsushi/ruby24:latest sinatra
+docker build --tag digitalsushi/sinatra:latest sinatra
