@@ -1,0 +1,5 @@
+i think we need to run docker with this in the session
+
+Set-ExecutionPolicy -Scope CurrentUser Unrestricted
+
+or else it will say it cannot connect to the daemon.
