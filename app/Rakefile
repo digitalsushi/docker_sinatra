@@ -1,0 +1,9 @@
+require "json"
+
+desc "Start server in debug mode"
+task :default  do |t, args|
+  STDOUT.sync = true
+  top="#{File.expand_path File.dirname(__FILE__)}"
+  registry = JSON.parse( File.read("#{top}/lib/configure_server.json") )
+  system "DEVELOPMENT=true rerun ruby #{File.expand_path File.dirname(__FILE__)}/lib/main_server.rb"
+end

@@ -1,5 +1,19 @@
+# SHELL NEEDS ADMIN
 i think we need to run docker with this in the session
 
 Set-ExecutionPolicy -Scope CurrentUser Unrestricted
 
 or else it will say it cannot connect to the daemon.
+
+# MUST DECLARE SHARED DRIVES IN DOCKER CONFIG
+
+Before you can mount a host directory, you must allow the drive in the docker config.
+
+# AUTO RESTART ISSUES
+
+We use a ruby gem called rerun to locate file changes and restart the server
+automatically. This uses inotify, but we're loading the mounted Docker volume 
+over SMB which of course, does not support this (readily. It's apparently coming soon).
+
+So if you change a file from the host, the rerun feature will not notice it. Just click the 'r'
+button in the main server task and it will restart itself from there. 

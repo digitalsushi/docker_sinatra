@@ -1,0 +1,5 @@
+{
+  "listen_on_tcp_port_development" : 4000,
+  "listen_on_ipaddr"               : "0.0.0.0",
+  "valid"                          : true
+}
