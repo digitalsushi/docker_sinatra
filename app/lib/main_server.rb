@@ -13,7 +13,7 @@ require "#{File.expand_path File.dirname(__FILE__)}/../lib/sinatra_processing.rb
 configure do
   Rack::Multipart::Parser.const_set('BUFSIZE', 10_000_000) #just leave this, makes it over 30x faster uploads
   enable :logging, :dump_errors, :raise_errors, :sessions
-  set :public_folder, 'static'
+  set :public_folder, '/webstuff'
 
   file = File.new("#{ENV['HOME']}/sinatra.log", 'a+')
   file.sync = true

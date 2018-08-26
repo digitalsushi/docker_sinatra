@@ -8,4 +8,4 @@ RUN echo "dude ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER dude
 WORKDIR /home/dude
 COPY --chown=dude Gemfile /home/dude/project/Gemfile
-RUN source /etc/profile; cd /home/dude/project/; bundle install
+RUN source /etc/profile; cd /home/dude/project/; bundle install; 

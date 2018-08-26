@@ -23,5 +23,16 @@ class MyCoolApp < Sinatra::Base
   get '/api/1.0/stuff/malarkey/:id' do
     controller_get_malarkey_by_id(params)
   end
+
+  get '/*' do
+    viewname = params[:splat].first   # eg "some/path/here"
+  
+    if File.exist?("/webstuff/" + viewname)
+      send_file "/webstuff/" + viewname
+  
+    else
+      "Nopers, I can't find it."
+    end
+  end
   
 end

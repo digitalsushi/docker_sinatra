@@ -27,7 +27,7 @@ $sessions={} # I want this to be a global because it is very convenient
   end
   
   after do
-    ActiveRecord::Base.clear_active_connections!
+    #ActiveRecord::Base.clear_active_connections!
   end
 
 end
