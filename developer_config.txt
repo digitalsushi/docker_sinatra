@@ -2,4 +2,4 @@
 
 # This is the directory on your host computer that contains your
 # website data. This will get exported into the docker host.
-host_web_directory=C:\Users\mike\Desktop\webstuff
+host_web_directory=$HOME\Desktop\webstuff
