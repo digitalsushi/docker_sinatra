@@ -10,6 +10,9 @@ require "lockfile"
 require "listen"
 require "#{File.expand_path File.dirname(__FILE__)}/../lib/sinatra_processing.rb"
 
+set :root, Dir['/app']
+pp settings.root
+
 configure do
   Rack::Multipart::Parser.const_set('BUFSIZE', 10_000_000) #just leave this, makes it over 30x faster uploads
   enable :logging, :dump_errors, :raise_errors, :sessions

@@ -24,11 +24,29 @@ class MyCoolApp < Sinatra::Base
     controller_get_malarkey_by_id(params)
   end
 
+  get '/template' do
+    markdown "_this is a test_"
+  end
+
+get '/test' do
+  pp settings.root
+end
+
   get '/*' do
     viewname = params[:splat].first   # eg "some/path/here"
   
     if File.exist?("/webstuff/" + viewname)
+
+
+      if viewname.include?(".js")
+      puts "JAVASCRIPT FILE #{viewname}"
+      send_file "/webstuff/" + viewname, :type=>'text/javascript'
+
+      else
+
+      end
       send_file "/webstuff/" + viewname
+
   
     else
       "Nopers, I can't find it."

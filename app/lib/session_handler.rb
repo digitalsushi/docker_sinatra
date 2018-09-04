@@ -1,5 +1,8 @@
 class MyCoolApp < Sinatra::Base
 
+set :root, Dir['/app']
+
+
 $sessions={} # I want this to be a global because it is very convenient
 
   before do
